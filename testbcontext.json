@@ -1,0 +1,54 @@
+{
+  "name": "GridvoWeChatTestDI",
+  "scan": "lib",
+  "beans": [
+    {
+      "id": "suiteTicketManageService",
+      "func": "lib.application.service.suiteTicketManage",
+      "props": [
+        {
+          "name": "__suiteTicketRepository__",
+          "ref": "mockSuiteTicketRepository"
+        }
+      ]
+    },
+    {
+      "id": "suiteAccessTokenManageService",
+      "func": "lib.application.service.suiteAccessTokenManage",
+      "props": [
+        {
+          "name": "__suiteAccessTokenRepository__",
+          "ref": "mockSuiteAccessTokenRepository"
+        }
+      ]
+    },
+    {
+      "id": "mockSuiteTicketRepository",
+      "func": "test.mock.suiteTicketRepository"
+    },
+    {
+      "id": "mockSuiteAccessTokenRepository",
+      "func": "test.mock.suiteAccessTokenRepository"
+    },
+    {
+      "id": "suiteTicketRepository",
+      "func": "lib.application.repository.suiteTicketRepositoryMongoDB",
+      "props": [
+        {
+          "name": "dBUrl",
+          "value": "mongodb://localhost:27017/TestWeChat"
+        }
+      ]
+    },
+    {
+      "id": "suiteAccessTokenRepository",
+      "func": "lib.application.repository.suiteAccessTokenRepositoryMongoDB",
+      "props": [
+        {
+          "name": "dBUrl",
+          "value": "mongodb://localhost:27017/TestWeChat"
+        }
+      ]
+    }
+  ]
+}
