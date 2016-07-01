@@ -13,5 +13,8 @@
     "mongodb": "^2.1.18",
     "should": "^9.0.2",
     "underscore": "^1.8.3"
+  },
+  "dependencies": {
+    "wechat-crypto": "0.0.2"
   }
 }

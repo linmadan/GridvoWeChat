@@ -1,62 +1,48 @@
 {
-  "name": "gDataCenterTestDI",
+  "name": "GridvoWeChatTestDI",
   "scan": "lib",
   "beans": [
     {
-      "id": "dataDispatch",
-      "func": "lib.application.dataDispatch",
+      "id": "callBackURLAuthService",
+      "func": "lib.application.service.callBackURLAuth"
+    },
+    {
+      "id": "suiteTicketManageService",
+      "func": "lib.application.service.suiteTicketManage",
       "props": [
         {
-          "name": "__dataRepository__",
-          "ref": "dataRepository"
+          "name": "__suiteTicketRepository__",
+          "ref": "suiteTicketRepository"
         }
       ]
     },
     {
-      "id": "dataRTMaster",
-      "func": "lib.application.dataRTMaster",
+      "id": "suiteAccessTokenManageService",
+      "func": "lib.application.service.suiteAccessTokenManage",
       "props": [
         {
-          "name": "__dataRepository__",
-          "ref": "dataRepository"
-        },
-        {
-          "name": "__stationRepository__",
-          "ref": "stationRepository"
+          "name": "__suiteAccessTokenRepository__",
+          "ref": "suiteAccessTokenRepository"
         }
       ]
     },
     {
-      "id": "stationRepository",
-      "func": "lib.application.repository.stationMongoDB",
-      "props": [
-        {
-          "name": "dBUrl",
-          "value": "mongodb://localhost:27017/GDataCenter"
-        }
-      ]
-    },
-    {
-      "id": "dataRepository",
-      "func": "lib.application.repository.dataMongoDB",
+      "id": "suiteTicketRepository",
+      "func": "lib.application.repository.suiteTicketRepositoryMongoDB",
       "props": [
         {
           "name": "dBUrl",
-          "value": "mongodb://localhost:27017/GDataCenter"
+          "value": "mongodb://10.0.2.16:27017/TestWeChat"
         }
       ]
     },
     {
-      "id": "mqttClient",
-      "func": "lib.infrastructure.mqttClient",
-      "args": [
+      "id": "suiteAccessTokenRepository",
+      "func": "lib.application.repository.suiteAccessTokenRepositoryMongoDB",
+      "props": [
         {
-          "name": "mqttBrokerUrl",
-          "value": "mqtt://10.0.3.16:61613"
-        },
-        {
-          "name": "optionsStr",
-          "value": "{\"username\":\"gridvo\",\"password\":\"gridvo\"}"
+          "name": "dBUrl",
+          "value": "mongodb://10.0.2.16:27017/TestWeChat"
         }
       ]
     }

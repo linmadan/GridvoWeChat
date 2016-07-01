@@ -3,6 +3,16 @@
   "scan": "lib",
   "beans": [
     {
+      "id": "callBackURLAuthService",
+      "func": "lib.application.service.callBackURLAuth",
+      "props": [
+        {
+          "name": "__WeChatCrypto__",
+          "ref": "mockWeChatCrypto"
+        }
+      ]
+    },
+    {
       "id": "suiteTicketManageService",
       "func": "lib.application.service.suiteTicketManage",
       "props": [
@@ -21,6 +31,10 @@
           "ref": "mockSuiteAccessTokenRepository"
         }
       ]
+    },
+    {
+      "id": "mockWeChatCrypto",
+      "func": "test.mock.weChatCrypto"
     },
     {
       "id": "mockSuiteTicketRepository",
