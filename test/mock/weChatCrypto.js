@@ -8,7 +8,7 @@ WeChatCrypto.prototype.getSignature = function () {
 };
 
 WeChatCrypto.prototype.decrypt = function () {
-    return "echostr";
+    return {message: "echostr"};
 };
 
 module.exports = WeChatCrypto;

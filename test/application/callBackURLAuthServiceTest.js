@@ -12,22 +12,22 @@ describe('callBackURLAuth service use case test', function () {
             service = bearcat.getBean('callBackURLAuthService');
         });
     });
-    context('auth call back url return echostr #authURL(urlParameter, callback)', function () {
+    context('auth call back url return echostr #authURL(authParameter, callback)', function () {
         it('return null if urlParameter no signature,timestamp,nonce,encrypt', function (done) {
-            var urlParameter = {};
-            urlParameter.signature = "signature";
-            service.authURL(urlParameter, function (err, echostr) {
+            var authParameter = {};
+            authParameter.signature = "signature";
+            service.authURL(authParameter, function (err, echostr) {
                 _.isNull(echostr).should.be.eql(true);
                 done();
             });
         });
         it('return echostr if urlParameter is ok', function (done) {
-            var urlParameter = {};
-            urlParameter.signature = "signature";
-            urlParameter.timestamp = new Date();
-            urlParameter.nonce = "nonce";
-            urlParameter.encrypt = "encrypt";
-            service.authURL(urlParameter, function (err, echostr) {
+            var authParameter = {};
+            authParameter.signature = "signature";
+            authParameter.timestamp = new Date();
+            authParameter.nonce = "nonce";
+            authParameter.encrypt = "encrypt";
+            service.authURL(authParameter, function (err, echostr) {
                 echostr.should.be.eql("echostr");
                 done();
             });
