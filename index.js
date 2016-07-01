@@ -1,8 +1,7 @@
 'use strict';
 var bearcat = require('bearcat');
-var bearcatContextPath = require.resolve('./bcontext.json');
 var constant = require('./lib/application/util/constant');
-
+var bearcatContextPath = require.resolve('./bcontext.json');
 bearcat.createApp([bearcatContextPath]);
 var createCallBackURLAuthService;
 var createSuiteTicketManageService;
@@ -21,4 +20,4 @@ bearcat.start(function () {
 module.exports.createCallBackURLAuthService = createCallBackURLAuthService;
 module.exports.createSuiteTicketManageService = createSuiteTicketManageService;
 module.exports.createSuiteAccessTokenManageService = createSuiteAccessTokenManageService;
-module.exports = constant;
+module.exports.constant = constant;
