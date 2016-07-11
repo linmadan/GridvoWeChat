@@ -37,7 +37,7 @@ describe('suite ticket repository MongoDB use case test', function () {
                     done();
                 });
             });
-            it('should return account', function (done) {
+            it('should return suite ticket', function (done) {
                 var suiteID = "suiteID";
                 Repository.getSuiteTicket(suiteID, function (err, suiteTicket) {
                     suiteTicket.suiteID.should.be.eql("suiteID");

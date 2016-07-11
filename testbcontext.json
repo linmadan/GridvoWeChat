@@ -33,6 +33,16 @@
       ]
     },
     {
+      "id": "authCorpManageService",
+      "func": "lib.application.service.authCorpManage",
+      "props": [
+        {
+          "name": "__authCorpRepository__",
+          "ref": "mockAuthCorpRepository"
+        }
+      ]
+    },
+    {
       "id": "mockWeChatCrypto",
       "func": "test.mock.weChatCrypto"
     },
@@ -43,6 +53,10 @@
     {
       "id": "mockSuiteAccessTokenRepository",
       "func": "test.mock.suiteAccessTokenRepository"
+    },
+    {
+      "id": "mockAuthCorpRepository",
+      "func": "test.mock.authCorpRepository"
     },
     {
       "id": "suiteTicketRepository",
@@ -57,6 +71,16 @@
     {
       "id": "suiteAccessTokenRepository",
       "func": "lib.application.repository.suiteAccessTokenRepositoryMongoDB",
+      "props": [
+        {
+          "name": "dBUrl",
+          "value": "mongodb://localhost:27017/TestWeChat"
+        }
+      ]
+    },
+    {
+      "id": "authCorpRepository",
+      "func": "lib.application.repository.authCorpRepositoryMongoDB",
       "props": [
         {
           "name": "dBUrl",

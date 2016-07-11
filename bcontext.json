@@ -27,6 +27,16 @@
       ]
     },
     {
+      "id": "authCorpManageService",
+      "func": "lib.application.service.authCorpManage",
+      "props": [
+        {
+          "name": "__authCorpRepository__",
+          "ref": "authCorpRepository"
+        }
+      ]
+    },
+    {
       "id": "suiteTicketRepository",
       "func": "lib.application.repository.suiteTicketRepositoryMongoDB",
       "props": [
@@ -39,6 +49,16 @@
     {
       "id": "suiteAccessTokenRepository",
       "func": "lib.application.repository.suiteAccessTokenRepositoryMongoDB",
+      "props": [
+        {
+          "name": "dBUrl",
+          "value": "mongodb://10.0.2.16:27017/WeChat"
+        }
+      ]
+    },
+    {
+      "id": "authCorpRepository",
+      "func": "lib.application.repository.authCorpRepositoryMongoDB",
       "props": [
         {
           "name": "dBUrl",

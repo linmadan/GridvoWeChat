@@ -38,7 +38,7 @@ describe('suite access token repository MongoDB use case test', function () {
                     done();
                 });
             });
-            it('should return account', function (done) {
+            it('should return suite access token', function (done) {
                 var suiteAccessTokenID = "suiteAccessTokenID";
                 Repository.getSuiteAccessToken(suiteAccessTokenID, function (err, suiteAccessToken) {
                     suiteAccessToken.suiteID.should.be.eql("suiteAccessTokenID");

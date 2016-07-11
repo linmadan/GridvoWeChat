@@ -7,6 +7,7 @@ bearcat.createApp([bearcatContextPath]);
 var createCallBackURLAuthService;
 var createSuiteTicketManageService;
 var createSuiteAccessTokenManageService;
+var createAuthCorpManageService;
 bearcat.start(function () {
     createCallBackURLAuthService = function () {
         return bearcat.getBean('callBackURLAuthService');
@@ -17,9 +18,13 @@ bearcat.start(function () {
     createSuiteAccessTokenManageService = function () {
         return bearcat.getBean('suiteAccessTokenManageService');
     };
+    createAuthCorpManageService = function () {
+        return bearcat.getBean('authCorpManageService');
+    };
 });
 module.exports.createCallBackURLAuthService = createCallBackURLAuthService;
 module.exports.createSuiteTicketManageService = createSuiteTicketManageService;
 module.exports.createSuiteAccessTokenManageService = createSuiteAccessTokenManageService;
+module.exports.createAuthCorpManageService = createAuthCorpManageService;
 module.exports.createWeChatCorpServiceAPI = weChatCorpServiceAPI.createWeChatCorpServiceAPI;
 module.exports.constant = constant;
