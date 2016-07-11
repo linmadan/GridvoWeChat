@@ -1,6 +1,7 @@
 'use strict';
 var bearcat = require('bearcat');
 var constant = require('./lib/application/util/constant');
+var weChatCorpServiceAPI = require('./lib/application/util/weChatCorpServiceAPI');
 var bearcatContextPath = require.resolve('./bcontext.json');
 bearcat.createApp([bearcatContextPath]);
 var createCallBackURLAuthService;
@@ -20,4 +21,5 @@ bearcat.start(function () {
 module.exports.createCallBackURLAuthService = createCallBackURLAuthService;
 module.exports.createSuiteTicketManageService = createSuiteTicketManageService;
 module.exports.createSuiteAccessTokenManageService = createSuiteAccessTokenManageService;
+module.exports.createWeChatCorpServiceAPI = weChatCorpServiceAPI.createWeChatCorpServiceAPI;
 module.exports.constant = constant;

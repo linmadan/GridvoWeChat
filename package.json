@@ -7,14 +7,15 @@
     "email": "772181827@qq.com"
   },
   "devDependencies": {
-    "async": "^2.0.0-rc.6",
-    "bearcat": "^0.4.29",
     "mocha": "^2.5.3",
-    "mongodb": "^2.1.18",
-    "should": "^9.0.2",
-    "underscore": "^1.8.3"
+    "should": "^9.0.2"
   },
   "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "bearcat": "^0.4.29",
+    "mongodb": "^2.1.18",
+    "underscore": "^1.8.3",
+    "wechat-corp-service": "^0.2.1",
     "wechat-crypto": "0.0.2"
   }
 }
