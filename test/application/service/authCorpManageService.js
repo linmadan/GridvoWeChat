@@ -6,7 +6,7 @@ var should = require('should');
 describe('authCorpManage service use case test', function () {
     var service;
     before(function () {
-        var contextPath = require.resolve('../../testbcontext.json');
+        var contextPath = require.resolve('../../../testbcontext.json');
         bearcat.createApp([contextPath]);
         bearcat.start(function () {
             service = bearcat.getBean('authCorpManageService');

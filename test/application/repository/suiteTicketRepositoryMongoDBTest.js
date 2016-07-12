@@ -3,12 +3,12 @@ var MongoClient = require('mongodb').MongoClient;
 var bearcat = require('bearcat');
 var _ = require('underscore');
 var should = require('should');
-var SuiteTicket = require('../../lib/domain/suiteTicket');
+var SuiteTicket = require('../../../lib/domain/suiteTicket');
 
 describe('suite ticket repository MongoDB use case test', function () {
     var Repository;
     before(function () {
-        var contextPath = require.resolve('../../testbcontext.json');
+        var contextPath = require.resolve('../../../testbcontext.json');
         bearcat.createApp([contextPath]);
         bearcat.start(function () {
             Repository = bearcat.getBean('suiteTicketRepository');
