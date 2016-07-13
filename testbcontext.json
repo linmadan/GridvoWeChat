@@ -37,10 +37,14 @@
       "func": "lib.application.service.authCorpManage",
       "props": [
         {
-          "name": "__authCorpRepository__",
-          "ref": "mockAuthCorpRepository"
+          "name": "__authCorpSuiteInfoRepository__",
+          "ref": "mockAuthCorpSuiteInfoRepository"
         }
       ]
+    },
+    {
+      "id": "authCorpSuiteProxyService",
+      "func": "lib.application.service.authCorpSuiteProxy"
     },
     {
       "id": "mockWeChatCrypto",
@@ -55,8 +59,8 @@
       "func": "test.mock.suiteAccessTokenRepository"
     },
     {
-      "id": "mockAuthCorpRepository",
-      "func": "test.mock.authCorpRepository"
+      "id": "mockAuthCorpSuiteInfoRepository",
+      "func": "test.mock.authCorpSuiteInfoRepository"
     },
     {
       "id": "suiteTicketRepository",
@@ -79,8 +83,8 @@
       ]
     },
     {
-      "id": "authCorpRepository",
-      "func": "lib.application.repository.authCorpRepositoryMongoDB",
+      "id": "authCorpSuiteInfoRepository",
+      "func": "lib.application.repository.authCorpSuiteInfoRepositoryMongoDB",
       "props": [
         {
           "name": "dBUrl",

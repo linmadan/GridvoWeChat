@@ -1,18 +1,23 @@
 'use strict';
-var AuthCorp = require('../../lib/domain/authCorp');
+var AuthCorpSuiteInfo = require('../../lib/domain/authCorpSuiteInfo');
 
 function Repository() {
 };
 
-Repository.prototype.saveAuthCorp = function (authCorp, callback) {
+Repository.prototype.saveAuthCorpSuiteInfo = function (authCorpSuiteInfo, callback) {
     callback(null, true);
 };
 
-Repository.prototype.getAuthCorp = function (corpID, callback) {
+Repository.prototype.removeAuthCorpSuiteInfo = function (corpID, suiteID, callback) {
+    callback(null, true);
+};
+
+Repository.prototype.getAuthCorpSuiteInfo = function (corpID, suiteID, callback) {
     switch (corpID) {
         case "corpID":
-            callback(null, new AuthCorp({
+            callback(null, new AuthCorpSuiteInfo({
                 corpID: "corpID",
+                suiteID: "suiteID",
                 permanentCode: "permanentCode",
                 accessToken: "accessToken",
                 accessTokenExpire: new Date()
@@ -25,6 +30,7 @@ Repository.prototype.getAuthCorp = function (corpID, callback) {
             callback(null, null);
             return;
     }
-};
+}
+;
 
 module.exports = Repository;

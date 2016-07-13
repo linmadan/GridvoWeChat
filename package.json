@@ -14,6 +14,7 @@
     "async": "^2.0.0-rc.6",
     "bearcat": "^0.4.29",
     "mongodb": "^2.1.18",
+    "request": "^2.73.0",
     "underscore": "^1.8.3",
     "wechat-corp-service": "^0.2.1",
     "wechat-crypto": "0.0.2"
