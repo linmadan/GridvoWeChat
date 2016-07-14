@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "mocha": "^2.5.3",
+    "muk": "^0.5.2",
     "should": "^9.0.2"
   },
   "dependencies": {

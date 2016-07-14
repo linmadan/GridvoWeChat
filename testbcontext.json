@@ -29,6 +29,10 @@
         {
           "name": "__suiteAccessTokenRepository__",
           "ref": "mockSuiteAccessTokenRepository"
+        },
+        {
+          "name": "__suiteTicketManage__",
+          "ref": "mockSuiteTicketManageService"
         }
       ]
     },
@@ -44,7 +48,25 @@
     },
     {
       "id": "authCorpSuiteProxyService",
-      "func": "lib.application.service.authCorpSuiteProxy"
+      "func": "lib.application.service.authCorpSuiteProxy",
+      "props": [
+        {
+          "name": "suiteName",
+          "value": "smartStationSuite"
+        },
+        {
+          "name": "authCorpID",
+          "value": "authCorpID"
+        },
+        {
+          "name": "__authCorpManage__",
+          "ref": "mockAuthCorpManageService"
+        },
+        {
+          "name": "__suiteAccessTokenManage__",
+          "ref": "mockSuiteAccessTokenManageService"
+        }
+      ]
     },
     {
       "id": "mockWeChatCrypto",
@@ -61,6 +83,18 @@
     {
       "id": "mockAuthCorpSuiteInfoRepository",
       "func": "test.mock.authCorpSuiteInfoRepository"
+    },
+    {
+      "id": "mockSuiteTicketManageService",
+      "func": "test.mock.suiteTicketManage"
+    },
+    {
+      "id": "mockAuthCorpManageService",
+      "func": "test.mock.authCorpManage"
+    },
+    {
+      "id": "mockSuiteAccessTokenManageService",
+      "func": "test.mock.suiteAccessTokenManage"
     },
     {
       "id": "suiteTicketRepository",
