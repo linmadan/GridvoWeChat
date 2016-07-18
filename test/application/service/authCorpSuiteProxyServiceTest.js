@@ -13,7 +13,7 @@ describe('authCorpSuiteProxy service use case test', function () {
             service = bearcat.getBean('authCorpSuiteProxyService');
         });
     });
-    describe('#createApp(appName, callback)', function () {
+    describe('#createSuiteApp(authCorpID, suiteID, appID, appContent, callback)', function () {
         context('create a app for auth corp suite', function () {
             it('is fail if request wechat server fail or other depend err', function (done) {
                 var mockRequest = function (options, callback) {
@@ -21,29 +21,28 @@ describe('authCorpSuiteProxy service use case test', function () {
                     callback(err, null);
                 };
                 muk(service, "__httpRequest__", mockRequest);
-                var appName = "waterStationApp";
-                service.createApp(appName, function (err, isSuccess) {
+                var authCorpID = "authCorpID";
+                var suiteID = "suiteID";
+                var appID = "appID";
+                var appContent = {};
+                service.createSuiteApp(authCorpID, suiteID, appID, appContent, function (err, isSuccess) {
                     isSuccess.should.be.eql(false);
                     done();
                 });
             });
             it('is success if all is ok', function (done) {
                 var mockRequest = function (options, callback) {
-                    if (options.body.button) {
-                        callback(null, {}, {
-                            "errcode": 0,
-                            "errmsg": "ok"
-                        });
-                    }
-                    else{
-                        callback(null, {}, {
-                            "access_token": "accessToken"
-                        });
-                    }
+                    callback(null, {}, {
+                        "errcode": 0,
+                        "errmsg": "ok"
+                    });
                 };
                 muk(service, "__httpRequest__", mockRequest);
-                var appName = "waterStationApp";
-                service.createApp(appName, function (err, isSuccess) {
+                var authCorpID = "authCorpID";
+                var suiteID = "suiteID";
+                var appID = "appID";
+                var appContent = {};
+                service.createSuiteApp(authCorpID, suiteID, appID, appContent, function (err, isSuccess) {
                     isSuccess.should.be.eql(true);
                     done();
                 });

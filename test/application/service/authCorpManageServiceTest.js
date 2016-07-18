@@ -2,6 +2,7 @@
 var _ = require('underscore');
 var bearcat = require('bearcat');
 var should = require('should');
+var muk = require('muk');
 
 describe('authCorpManage service use case test', function () {
     var service;
@@ -36,49 +37,22 @@ describe('authCorpManage service use case test', function () {
             });
         });
     });
-    describe('#getAuthCorpSuiteAccessToken(corpID, suiteID, callback)', function () {
+    describe('#getAuthCorpLatesSuiteAccessToken(authCorpID, suiteID, callback)', function () {
         context('get auth corp suite access token', function () {
-            it('is ok', function (done) {
-                var corpID = "corpID";
+            it('is success if all is ok ', function (done) {
+                var mockRequest = function (options, callback) {
+                    callback(null, {}, {access_token: "accessToken"});
+                };
+                muk(service, "__httpRequest__", mockRequest);
+                var authCorpID = "corpID";
                 var suiteID = "suiteID";
-                service.getAuthCorpSuiteAccessToken(corpID, suiteID, function (err, accessTokenData) {
-                    accessTokenData.accessToken.should.be.eql("accessToken");
+                service.getAuthCorpLatesSuiteAccessToken(authCorpID, suiteID, function (err, accessToken) {
+                    accessToken.should.be.eql("accessToken");
                     done();
                 });
             });
-        });
-    });
-    describe('#getAuthCorpSuitePermanentCode(corpID, suiteID, callback)', function () {
-        context('get auth corp suite permanent code', function () {
-            it('is ok', function (done) {
-                var corpID = "corpID";
-                var suiteID = "suiteID";
-                service.getAuthCorpSuitePermanentCode(corpID, suiteID, function (err, permanentCode) {
-                    permanentCode.should.be.eql("permanentCode");
-                    done();
-                });
-            });
-        });
-    });
-    describe('#updateAuthCorpSuiteAccessToken(corpID, suiteID, accessTokenData, callback)', function () {
-        context('update auth corp suite access token', function () {
-            it('update fail if no this corp or suite', function (done) {
-                var corpID = "noCorpID";
-                var suiteID = "suiteID";
-                var accessTokenData = {};
-                service.updateAuthCorpSuiteAccessToken(corpID, suiteID, accessTokenData, function (err, isSuccess) {
-                    isSuccess.should.be.eql(false);
-                    done();
-                });
-            });
-            it('update success', function (done) {
-                var corpID = "corpID";
-                var suiteID = "suiteID";
-                var accessTokenData = {};
-                service.updateAuthCorpSuiteAccessToken(corpID, suiteID, accessTokenData, function (err, isSuccess) {
-                    isSuccess.should.be.eql(true);
-                    done();
-                });
+            after(function () {
+                muk.restore();
             });
         });
     });

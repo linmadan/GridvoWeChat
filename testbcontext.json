@@ -43,6 +43,10 @@
         {
           "name": "__authCorpSuiteInfoRepository__",
           "ref": "mockAuthCorpSuiteInfoRepository"
+        },
+        {
+          "name": "__suiteAccessTokenManage__",
+          "ref": "mockSuiteAccessTokenManageService"
         }
       ]
     },
@@ -51,20 +55,8 @@
       "func": "lib.application.service.authCorpSuiteProxy",
       "props": [
         {
-          "name": "suiteName",
-          "value": "smartStationSuite"
-        },
-        {
-          "name": "authCorpID",
-          "value": "authCorpID"
-        },
-        {
           "name": "__authCorpManage__",
           "ref": "mockAuthCorpManageService"
-        },
-        {
-          "name": "__suiteAccessTokenManage__",
-          "ref": "mockSuiteAccessTokenManageService"
         }
       ]
     },

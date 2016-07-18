@@ -20,7 +20,8 @@ Repository.prototype.getAuthCorpSuiteInfo = function (corpID, suiteID, callback)
                 suiteID: "suiteID",
                 permanentCode: "permanentCode",
                 accessToken: "accessToken",
-                accessTokenExpire: new Date()
+                expire: new Date(),
+                agents: {}
             }));
             break;
         case "noCorpID":

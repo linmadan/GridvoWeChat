@@ -3,7 +3,7 @@
 function Service() {
 };
 
-Service.prototype.getLatestSuiteAccessToken = function (suiteName, callback) {
+Service.prototype.getLatestSuiteAccessToken = function (suiteID, callback) {
     callback(null, "suiteAccessToken");
 };
 

@@ -35,7 +35,7 @@ describe('suiteAccessTokenManage service use case test', function () {
             });
         });
     });
-    describe('#getLatestSuiteAccessToken(suiteName,callback)', function () {
+    describe('#getLatestSuiteAccessToken(suiteID,callback)', function () {
         context('get suite access token', function () {
             it('get return null if request wechat server fail or other depend err', function (done) {
                 var mockRequest = function (options, callback) {
@@ -43,8 +43,8 @@ describe('suiteAccessTokenManage service use case test', function () {
                     callback(err, null);
                 };
                 muk(service, "__httpRequest__", mockRequest);
-                var suiteName = "smartStationSuite";
-                service.getLatestSuiteAccessToken(suiteName, function (err, suiteAccessToken) {
+                var suiteID = "tj75d1122acf5ed4aa";
+                service.getLatestSuiteAccessToken(suiteID, function (err, suiteAccessToken) {
                     _.isNull(suiteAccessToken).should.be.eql(true);
                     done();
                 });
@@ -54,9 +54,9 @@ describe('suiteAccessTokenManage service use case test', function () {
                     callback(null, {}, {suite_access_token: "accessToken"});
                 };
                 muk(service, "__httpRequest__", mockRequest);
-                var suiteName = "smartStationSuite";
-                service.getLatestSuiteAccessToken(suiteName, function (err, suiteAccessToken) {
-                   suiteAccessToken.should.be.eql("accessToken");
+                var suiteID = "tj75d1122acf5ed4aa";
+                service.getLatestSuiteAccessToken(suiteID, function (err, suiteAccessToken) {
+                    suiteAccessToken.should.be.eql("accessToken");
                     done();
                 });
             });
