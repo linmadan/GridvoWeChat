@@ -9,6 +9,7 @@ var createSuiteTicketManageService;
 var createSuiteAccessTokenManageService;
 var createAuthCorpManageService;
 var createAuthCorpSuiteProxyService;
+var createCorpAuthSuiteService;
 bearcat.start(function () {
     createCallBackURLAuthService = function () {
         return bearcat.getBean('callBackURLAuthService');
@@ -25,11 +26,14 @@ bearcat.start(function () {
     createAuthCorpSuiteProxyService = function () {
         return bearcat.getBean('authCorpSuiteProxyService');
     };
+    createCorpAuthSuiteService = function () {
+        return bearcat.getBean('corpAuthSuiteService');
+    };
 });
 module.exports.createCallBackURLAuthService = createCallBackURLAuthService;
 module.exports.createSuiteTicketManageService = createSuiteTicketManageService;
 module.exports.createSuiteAccessTokenManageService = createSuiteAccessTokenManageService;
 module.exports.createAuthCorpManageService = createAuthCorpManageService;
 module.exports.createAuthCorpSuiteProxyService = createAuthCorpSuiteProxyService;
-module.exports.createWeChatCorpServiceAPI = weChatCorpServiceAPI.createWeChatCorpServiceAPI;
+module.exports.createCorpAuthSuiteService = createCorpAuthSuiteService;
 module.exports.constant = constant;

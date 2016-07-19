@@ -31,6 +31,16 @@
       ]
     },
     {
+      "id": "corpAuthSuiteService",
+      "func": "lib.application.service.corpAuthSuite",
+      "props": [
+        {
+          "name": "__suiteAccessTokenManage__",
+          "ref": "suiteAccessTokenManageService"
+        }
+      ]
+    },
+    {
       "id": "authCorpManageService",
       "func": "lib.application.service.authCorpManage",
       "props": [
