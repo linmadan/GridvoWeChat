@@ -1,7 +1,6 @@
 'use strict';
 var bearcat = require('bearcat');
 var constant = require('./lib/application/util/constant');
-var weChatCorpServiceAPI = require('./lib/application/util/weChatCorpServiceAPI');
 var bearcatContextPath = require.resolve('./bcontext.json');
 bearcat.createApp([bearcatContextPath]);
 var createCallBackURLAuthService;
