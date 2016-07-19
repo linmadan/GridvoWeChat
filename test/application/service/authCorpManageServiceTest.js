@@ -56,6 +56,28 @@ describe('authCorpManage service use case test', function () {
             });
         });
     });
+    describe('#getAuthCorpSuiteAgentInfo(authCorpID, suiteID, appID, callback)', function () {
+        context('get auth corp suite agent info', function () {
+            it('return null if corp suite is no this appid ', function (done) {
+                var authCorpID = "corpID";
+                var suiteID = "suiteID";
+                var appID = "noAppID";
+                service.getAuthCorpSuiteAgentInfo(authCorpID, suiteID, appID, function (err, agentInfo) {
+                    _.isNull(agentInfo).should.be.eql(true);
+                    done();
+                });
+            });
+            it('is ok', function (done) {
+                var authCorpID = "corpID";
+                var suiteID = "suiteID";
+                var appID = "1";
+                service.getAuthCorpSuiteAgentInfo(authCorpID, suiteID, appID, function (err, agentInfo) {
+                    agentInfo.agentID.should.be.eql(1);
+                    done();
+                });
+            });
+        });
+    });
     describe('#removeAuthCorpSuiteInfo(corpID, suiteID, callback)', function () {
         context('remove auth corp suite info', function () {
             it('is success', function (done) {

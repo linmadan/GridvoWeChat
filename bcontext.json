@@ -23,6 +23,10 @@
         {
           "name": "__suiteAccessTokenRepository__",
           "ref": "suiteAccessTokenRepository"
+        },
+        {
+          "name": "__suiteTicketManage__",
+          "ref": "suiteTicketManageService"
         }
       ]
     },
@@ -33,6 +37,20 @@
         {
           "name": "__authCorpSuiteInfoRepository__",
           "ref": "authCorpSuiteInfoRepository"
+        },
+        {
+          "name": "__suiteAccessTokenManage__",
+          "ref": "suiteAccessTokenManageService"
+        }
+      ]
+    },
+    {
+      "id": "authCorpSuiteProxyService",
+      "func": "lib.application.service.authCorpSuiteProxy",
+      "props": [
+        {
+          "name": "__authCorpManage__",
+          "ref": "authCorpManageService"
         }
       ]
     },
