@@ -8,7 +8,7 @@ Service.prototype.getAuthCorpLatesSuiteAccessToken = function (authCorpID, suite
 };
 
 Service.prototype.getAuthCorpSuiteAgentInfo = function (authCorpID, suiteID, appID, callback) {
-    callback(null, {"1": {agentID: "1"}});
+    callback(null, {"1": {agentid: "1"}});
 };
 
 module.exports = Service;
