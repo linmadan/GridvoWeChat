@@ -7,6 +7,10 @@
       "func": "lib.application.service.callBackURLAuth"
     },
     {
+      "id": "parseCallBackDataService",
+      "func": "lib.application.service.parseCallBackData"
+    },
+    {
       "id": "suiteTicketManageService",
       "func": "lib.application.service.suiteTicketManage",
       "props": [
@@ -53,6 +57,10 @@
           "ref": "suiteAccessTokenManageService"
         }
       ]
+    },
+    {
+      "id": "corpUserManageService",
+      "func": "lib.application.service.corpUserManage"
     },
     {
       "id": "authCorpSuiteProxyService",
